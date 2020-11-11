@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "TsMpVPI942ULpeWq9arCs+MfHLsX5qsfbL8dLqkdMrdGqu8hIdNWpvL7/K6ZOKk2MAkaSP5/GehS94mROq9Itg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ud8mn\\source\\repos\\wizDev2020\\wizDev2020\\wizDev2020.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ud8mn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\ud8mn\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
