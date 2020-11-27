@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "ログイン";
+}
+@model LoginModel;
+
+
+<h2>@ViewData["Title"]</h2>
+<form method="post">
+    @if (!Model.Conf)
+    {
+        <label>ユーザー名またはパスワードが異なります </label>
+    }
+    <div class="form-group">
+        <label>ユーザー名</label>
+        <input class="form-control" asp-for="UserName" placeholder="ユーザーID">
+    </div>
+    <div class="form-group">
+        <label>パスワード</label>
+        <input class="form-control" asp-for="PW" placeholder="パスワード">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
