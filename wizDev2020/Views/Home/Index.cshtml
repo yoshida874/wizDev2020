@@ -2,10 +2,28 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <div class="embed-responsive iframe embed-responsive-16by9">
-   @* <h1 class="display-4">Welcome</h1>*@
-    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1677.6877190591697!2d140.3870478406752!3d37.398024695104816!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60206c874b16b50f%3A0x4b37197c9cef7e79!2z6YOh5bGx6aeF!5e1!3m2!1sja!2sjp!4v1606271415466!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-</div>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map Apiの検証</title>
+
+    <style>
+        #sample {
+            width: 900px;
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>郡山駅周辺</h2>
+    <div id="baseMap"></div>
+    <script src="~/js/map.js">
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5OowCygsww8q70YfHd3nDuf3-kgA9ss&callback=initMap">
+    </script>
+</body>
+
+</html>
+
