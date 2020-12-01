@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\js\map.js" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
 </Project>
