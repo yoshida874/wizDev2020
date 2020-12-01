@@ -2,7 +2,27 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map Apiの検証</title>
+
+    <style>
+        #sample {
+            width: 900px;
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>郡山駅周辺</h2>
+    <div id="baseMap"></div>
+    <script src="~/js/map.js">
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5OowCygsww8q70YfHd3nDuf3-kgA9ss&callback=initMap">
+    </script>
+</body>
+
+</html>
