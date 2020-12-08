@@ -12,8 +12,9 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header style="background:linear-gradient(forestgreen,darkseagreen,forestgreen)">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
 
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><font face="HGS行書体"><font size="2">地図でわかる</font><br>郡山の歴史（仮） </a>
@@ -37,31 +38,32 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><center><b>ゲスト<br>ログインする</b></center></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index"><center><b>ゲスト<br>ログインする</b></center></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - wizDev2020 -
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">よくある質問</a>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">使い方</a>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">プライバシーポリシー</a>
-
+     <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+   
+
+            <footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2020 - 郡山の歴史（仮） -
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">よくある質問</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">使い方</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">プライバシーポリシー</a>
+
+                </div>
+            </footer>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            @RenderSection("Scripts", required: false)
 </body>
-</html>
+        </html>
