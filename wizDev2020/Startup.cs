@@ -1,4 +1,4 @@
-using wizDev2020.Data;
+using wizDev2020.Data;  
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace wizDev2020
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<UserContext>(options =>
+            services.AddDbContext<Wizdev2020Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("UserContext")));
         }
 
