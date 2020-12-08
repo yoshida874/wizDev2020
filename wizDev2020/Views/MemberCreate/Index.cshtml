@@ -5,16 +5,18 @@
 
 <style type="text/css">
     h1 {
-        @* background: radial-gradient(blue,white);
-              border-radius: 50px 50px 50px 50px;
-        *@ color: darkgreen;
+        @*background:radial-gradient(blue,white);border-radius:50px50px50px50px;*@color: darkgreen;
         text-shadow: 1px 2px 3px #808080;
     }
+
     label {
-        font-size: 16px;
+        font-size: 16pt;
         color: seagreen;
     }
 
+    form {
+        margin: 0 auto;
+    }
 </style>
 
 <h1>@ViewData["Title"]</h1>
@@ -24,23 +26,23 @@
     <center>
         <div class="form-group">
             <label>ユーザー名(必須)</label>
-            <input class="form-control w-50" placeholder="ユーザーID">
+            <input class="form-control" placeholder="ユーザーID">
         </div>
     </center>
     <center>
         <div class="form-group">
             <label>パスワード(必須)</label>
-            <input class="form-control w-50" type="password" placeholder="パスワード">
+            <input class="form-control" type="password" placeholder="パスワード">
         </div>
     </center>
     <center>
-         <div class="form-group">
-                <label>パスワード(確認のためもう一度ご入力ください)</label>
-                <input class="form-control w-50" type="password" placeholder="パスワード">
-         </div>
-     </center>
+        <div class="form-group">
+            <label>パスワード(確認のためもう一度ご入力ください)</label>
+            <input class="form-control" type="password" placeholder="パスワード">
+        </div>
+    </center>
 
-        <center>
-            <button type="submit" class="btn btn-primary w-25 h-auto mt-2">登録</button>
-        </center>
+    <center>
+        <button type="submit" class="btn btn-primary w-25 h-auto mt-2">登録</button>
+    </center>
 </form>
