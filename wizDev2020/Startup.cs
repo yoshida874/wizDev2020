@@ -36,7 +36,7 @@ namespace wizDev2020
                 options.CheckConsentNeeded = context => true;
                 // requires using Microsoft.AspNetCore.Http;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-                
+
                 options.Secure = CookieSecurePolicy.Always;
 
                 options.HttpOnly = HttpOnlyPolicy.Always;
@@ -49,6 +49,7 @@ namespace wizDev2020
 
             services.AddDbContext<Wizdev2020Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("UserContext")));
+        }
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
