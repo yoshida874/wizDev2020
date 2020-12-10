@@ -16,12 +16,8 @@ namespace wizDev2020.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(new MemberCreateModel { Conf = true });
+            return View();
         }
 
-
-
-
-        
     }
 }

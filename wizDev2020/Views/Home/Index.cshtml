@@ -2,13 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>Google Map Apiの検証</title>
 
     <style>
-        #sample {
+        #baseMap {
             width: 900px;
             height: 700px;
         }
@@ -16,14 +13,14 @@
 </head>
 
 <body>
-    <h2>郡山駅周辺</h2>
+    <h1>@ViewData["Title"]</h1>
     <div id="baseMap"></div>
     <script src="~/js/map.js">
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5OowCygsww8q70YfHd3nDuf3-kgA9ss&callback=initMap">
     </script>
+
 </body>
 
-</html>
 
