@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Text;
-using System.Linq ;
+using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -24,18 +24,11 @@ namespace wizDev2020.Controllers
         {
             _context = context;
         }
-        
+
 
         [HttpGet]
         public IActionResult Index()
         {
-            using (_context)
-            {
-                /*var sample = _context.Users.FirstOrDefault(x => x.Id == 1);
-                Console.WriteLine(sample.Id);*/
-                var user = from u in _context.Users
-                           select u;
-            }
             ViewBag.Conf = true;
             return View();
         }
@@ -54,12 +47,12 @@ namespace wizDev2020.Controllers
 
             // ダミーの認証処理
             // ===================================================
-            
+
             using (_context)
             {
                 var user = from u in _context.Users
-                           select u;
-                        
+                           select new { u.user_name, u.user_password };
+
                 foreach (var item in user)
                 {
                     if (item.user_name == user_name && item.user_password == user_password)
