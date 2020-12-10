@@ -17,5 +17,6 @@ namespace wizDev2020.Models
         [DataType(DataType.Password)]
         public string user_password { get; set; }
 
+        public int character_id { get; set; }
     } 
 }
