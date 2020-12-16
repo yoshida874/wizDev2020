@@ -1,3 +1,4 @@
+
 using wizDev2020.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -35,7 +36,7 @@ namespace wizDev2020
                 options.CheckConsentNeeded = context => true;
                 // requires using Microsoft.AspNetCore.Http;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-                
+
                 options.Secure = CookieSecurePolicy.Always;
 
                 options.HttpOnly = HttpOnlyPolicy.Always;
@@ -46,7 +47,7 @@ namespace wizDev2020
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<UserContext>(options =>
+            services.AddDbContext<Wizdev2020Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("UserContext")));
         }
 
@@ -75,7 +76,7 @@ namespace wizDev2020
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=login}/{action=Index}/{id?}");
             });
         }
     }
