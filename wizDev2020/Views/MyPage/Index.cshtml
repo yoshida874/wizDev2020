@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "マイページ";
+}
+
+@model MyPageModel;
+
+    <div class="d-flex justify-content-lg-around">
+        <div class="d-flex flex-column flex-fill">
+            <img class="w-75 img-fluid" srcset="~/images/sample.jpg"  alt="Grapefruit slice atop a pile of other slices"  >
+
+                <table class="table w-75">
+                      
+                    <tr>
+                        <th scope="row">ユーザー名</th>
+                        <td>shinzawatakane</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">問題正答率</th>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">訪れた場所</th>
+                        <td>--</td>
+                    </tr>
+                </table>
+            </div>
+        
+        
+        <div class="d-flex flex-column justify-content-around w-50 ">
+            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">ユーザー名・パスワード変更</button>
+            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">キャラクター育成</button>
+            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">キャラクター図鑑</button>
+            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">郡山クイズ</button>
+            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">ログアウト</button>
+        </div>
+        
+    </div>
+
+
+
