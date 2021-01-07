@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.SqlServer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.SqlServer;
 using System.ComponentModel.DataAnnotations;
 using wizDev2020.Models;
 
