@@ -16,26 +16,11 @@ namespace wizDev2020.Controllers
 
         public QuizController(Wizdev2020Context context) => _context = context;
 
-        //[HttpGet]
         public IActionResult Index()
         {
-            //QuizModel model = _context.Quizzes.Single(v => v.Id == 1);
-            ////QuizModel model = new QuizModel();
-            //_context.Quizzes.Count();
             data = _context.Quizzes.OrderBy(q => Guid.NewGuid()).ToArray();
             return View(_context.Quizzes);
         }
-
-        //[HttpPost]
-        //public async Task<IActionResult> Index(int id)
-        //{
-        //    bool isFailed;
-
-        //    QuizModel model = _context.Quizzes.Single(v => v.Id == 1);
-        //    return RedirectToAction("Index", this);
-        //    data = _context.Quizzes.OrderBy(q => Guid.NewGuid()).ToArray();
-        //    return View(data.Length);
-        //}
 
         public IActionResult Question(int id)
         {

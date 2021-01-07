@@ -1,11 +1,11 @@
-﻿var isSel;
-
-function show(btn) {
+﻿function show(btn) {
     var elem = document.getElementById('correct');
-    if (btn.value === elem.htmlFor) {
-        elem.hidden = true;
-    } else {
-        elem.textContent = '不正解';
+    if (btn.id === elem.innerHTML) {
+        elem.innerHTML = '正解';
+        elem.hidden = false;
+    }
+    else {
+        elem.innerHTML = '不正解';
         elem.hidden = false;
     }
     hideBtns();
