@@ -1,6 +1,7 @@
 ﻿var map;
 var marker = [];
 var infoWindow = [];//吹き出し
+/*
 var markerData = [ // マーカーを立てる場所名・緯度・経度
     {
         name: '郡山駅',
@@ -19,8 +20,9 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
         lat: 37.39805083,
         lng: 140.35825968
     }
+    
 ];
-
+*/
 function initMap() {
     // 地図の作成
     var mapLatLng = new google.maps.LatLng({ lat: markerData[0]['lat'], lng: markerData[0]['lng'] }); // 緯度経度のデータ作成
