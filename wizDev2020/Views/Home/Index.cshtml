@@ -15,10 +15,15 @@
 <body>
     <h1>@ViewData["Title"]</h1>
     <div id="baseMap"></div>
+
+    <script>
+        var markerData = @Html.Raw(@ViewBag.json);
+    </script>
+
     <script src="~/js/map.js">
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5OowCygsww8q70YfHd3nDuf3-kgA9ss&callback=initMap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtln6dMXayEXm8A7VCK-sacp4g_XGtHE8&callback=initMap">
     </script>
 
 </body>
