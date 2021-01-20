@@ -17,5 +17,9 @@ namespace wizDev2020.Models
         public string quiz_choice3 { get; set; }
         public string quiz_choice4 { get; set; }
         public int quiz_correct { get; set; }
+        public string quiz_description1 { get; set; }
+        public string quiz_description2 { get; set; }
+        public string quiz_description3 { get; set; }
+        public string quiz_description4 { get; set; }
     }
 }

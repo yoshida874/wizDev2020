@@ -1,0 +1,59 @@
+﻿@model QuizModel
+
+@{
+    var id = ViewContext.RouteData.Values["id"].ToString();
+    var now = $"{id}問目";
+    var next = Convert.ToInt32(id) + 1;
+}
+
+<h1>@now</h1>
+<p>@Model.quiz_question</p>
+<form class="form-group">
+    <table class="table table-borderless">
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="1" asp-for="quiz_choice1" name="Ans1" />
+                <label asp-for="@Model.quiz_choice1">@Model.quiz_choice1</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="2" asp-for="quiz_choice2" name="Ans2" />
+                <label asp-for="@Model.quiz_choice2">@Model.quiz_choice2</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="3" asp-for="quiz_choice3" name="Ans3" />
+                <label asp-for="@Model.quiz_choice3">@Model.quiz_choice3</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="4" asp-for="quiz_choice4" name="Ans4" />
+                <label asp-for="@Model.quiz_choice4">@Model.quiz_choice4</label>
+            </td>
+        </tr>
+    </table>
+</form>
+<br />
+<label id="correct" hidden>@Model.quiz_correct</label>
+<form method="post">
+    <input type="submit" asp-controller="Quiz" asp-action="Question" asp-route-id="@next" class="btn btn-primary" value="次の問題" />
+</form>
+<br />
+<ul id="descriptions" hidden>
+    <li>
+        <p>@Model.quiz_description1</p>
+    </li>
+    <li>
+        <p>@Model.quiz_description2</p>
+    </li>
+    <li>
+        <p>@Model.quiz_description3</p>
+    </li>
+    <li>
+        <p>@Model.quiz_description4</p>
+    </li>
+</ul>
+<script src="~/js/quiz.js"></script>
