@@ -76,7 +76,7 @@ namespace wizDev2020
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=login}/{action=Index}/{id?}");
+                    pattern: "{controller=home}/{action=Index}/{id?}");
             });
         }
     }
