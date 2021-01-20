@@ -8,7 +8,7 @@
     <title>Google Map Apiの検証</title>
 
     <style>
-        #sample {
+        #baseMap {
             width: 900px;
             height: 700px;
         }
@@ -21,8 +21,39 @@
     <script src="~/js/map.js">
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5OowCygsww8q70YfHd3nDuf3-kgA9ss&callback=initMap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtln6dMXayEXm8A7VCK-sacp4g_XGtHE8">
     </script>
+
+    <script type="text/javascript">
+
+
+        //エラー時に呼び出される関数
+        function showErr(err) {
+            switch (err.code) {
+                case 1: alert("位置情報の利用が許可されていません"); break;
+                case 2: alert("デバイスの位置が判定できません"); break;
+                case 3: alert("タイムアウトしました"); break;
+                default: alert(err.message);
+
+            }
+        }
+
+        //geolocationに対応しているか否かを確認
+        if ("geolocation" in navigator) {
+            var opt = {
+                "enableHighAccuracy": true,
+                "timeout": 10000,
+                "maximumAge": 0,
+            };
+            
+            var CurrentPosition = navigator.geolocation.getCurrentPosition(setMap, showErr, opt);
+        } else {
+            alert("ブラウザが位置情報取得に対応していません");
+        }
+
+
+    </script>
+
 </body>
 
 </html>

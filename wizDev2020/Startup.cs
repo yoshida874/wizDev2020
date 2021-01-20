@@ -1,4 +1,4 @@
-using wizDev2020.Data;
+
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -46,8 +46,6 @@ namespace wizDev2020
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<UserContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("UserContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,7 +73,7 @@ namespace wizDev2020
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=login}/{action=Index}/{id?}");
+                    pattern: "{controller=home}/{action=Index}/{id?}");
             });
         }
     }
