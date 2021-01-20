@@ -9,12 +9,32 @@
 <h1>@now</h1>
 <p>@Model.quiz_question</p>
 <form class="form-group">
-    <div class="row">
-        <input id="1" type="button" asp-for="quiz_choice1" class="col btn btn-primary" onclick="show(this)" />
-        <input id="2" type="button" asp-for="quiz_choice2" class="col btn btn-primary" onclick="show(this)" />
-        <input id="3" type="button" asp-for="quiz_choice3" class="col btn btn-primary" onclick="show(this)" />
-        <input id="4" type="button" asp-for="quiz_choice4" class="col btn btn-primary" onclick="show(this)" />
-    </div>
+    <table class="table table-borderless">
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="1" asp-for="quiz_choice1" name="Ans1" />
+                <label asp-for="@Model.quiz_choice1">@Model.quiz_choice1</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="2" asp-for="quiz_choice2" name="Ans2" />
+                <label asp-for="@Model.quiz_choice2">@Model.quiz_choice2</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="3" asp-for="quiz_choice3" name="Ans3" />
+                <label asp-for="@Model.quiz_choice3">@Model.quiz_choice3</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-lg" value="4" asp-for="quiz_choice4" name="Ans4" />
+                <label asp-for="@Model.quiz_choice4">@Model.quiz_choice4</label>
+            </td>
+        </tr>
+    </table>
 </form>
 <br />
 <label id="correct" hidden>@Model.quiz_correct</label>

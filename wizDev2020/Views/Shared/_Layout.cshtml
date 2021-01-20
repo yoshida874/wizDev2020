@@ -26,16 +26,6 @@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        @*検索バー*@
-                        <form action="cgi-bin/example.cgi" method="post">
-                            <p>場所を検索する</p>
-                            <input type="search" placeholder="キーワードを入力">
-                            <input type="submit" name="submit" value="検索">
-                        </form>
-
-                        <li class="nav-item">
-                            @*@<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>*@
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index"><center><b>ゲスト<br>ログインする</b></center></a>
@@ -45,11 +35,13 @@
             </div>
         </nav>
     </header>
-     <div class="container">
+    <div class="container">
+        <span style="font-family: 'Yu Gothic'">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
-        </div>
+        </span>
+    </div>
    
 
             <footer class="border-top footer text-muted">
