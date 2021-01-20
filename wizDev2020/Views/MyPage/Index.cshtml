@@ -12,7 +12,7 @@
                       
                     <tr>
                         <th scope="row">ユーザー名</th>
-                        <td>shinzawatakane</td>
+                        <td>@ViewBag.UserName</td>
                     </tr>
                     <tr>
                         <th scope="row">問題正答率</th>
@@ -28,8 +28,6 @@
         
         <div class="d-flex flex-column justify-content-around w-50 ">
             <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">ユーザー名・パスワード変更</button>
-            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">キャラクター育成</button>
-            <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">キャラクター図鑑</button>
             <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">郡山クイズ</button>
             <button type="button" class="btn btn-success btn-lg"  asp-controller="Home" asp-action="Privacy">ログアウト</button>
         </div>
