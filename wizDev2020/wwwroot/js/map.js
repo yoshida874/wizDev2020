@@ -101,13 +101,13 @@ function setMap(pos) {
         markerEvent(i, directionsService, directionsRenderer); // マーカーにクリックイベントを追加
     }
 
-    
+
     // マーカーにクリックイベントを追加
     function markerEvent(i, directionsService, directionsRenderer) {
         marker[i].addListener('click', function () { // マーカーをクリックしたとき
             infoWindow[i].open(map, marker[i]); // 吹き出しの表示
 
-          
+
             //関連付け
             directionsRenderer.setMap(mapObj);
 
@@ -132,5 +132,4 @@ function setMap(pos) {
 
         });
     }
-   
 }
