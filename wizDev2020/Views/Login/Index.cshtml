@@ -1,52 +1,50 @@
-
 ﻿@{
     ViewData["Title"] = "ログイン";
 }
-@model LoginModel;
+@model UserModel;
 
 <style type="text/css">
-    
     h1 {
-        @* background: radial-gradient(blue,white);
-           border-radius: 50px 50px 50px 50px;
-        *@ color: darkgreen;
+        @*background:radial-gradient(blue,white);border-radius:50px50px50px50px;*@color: darkgreen;
         text-shadow: 1px 2px 3px #808080;
     }
+
     label {
         font-size: 16pt;
         color: seagreen;
     }
-    form{
-        margin:0 auto;
+
+    form {
+        margin: 0 auto;
     }
-   
 </style>
 
+<h1>@ViewData["Title"]</h1>
 
+<form method="post" class="col-6">
 
-<form method="post"class="col-6">
-    <h1>@ViewData["Title"]</h1>
     <center>
         <b>
-            @if (!Model.Conf)
+            @if (!ViewBag.Conf)
             {
-<label style="color:red">ユーザー名またはパスワードが異なります </label>}
+                <label style="color:red">ユーザー名またはパスワードが異なります </label>
+            }
         </b>
     </center>
     <hr>
-        <div class="flom-group">
-            <label>ユーザー名</label>
-            <input class="form-control" asp-for="UserName" placeholder="ユーザーID">
-        </div>
+    <div class="from-group">
+        <label>ユーザー名</label>
+        <input class="form-control" asp-for="user_name" placeholder="ユーザーID">
+    </div>
     <br>
-        <div class="flom-group">
-            <label>パスワード</label>
-            <input class="form-control" asp-for="PW" placeholder="パスワード">
-        </div>
+    <div class="from-group">
+        <label>パスワード</label>
+        <input class="form-control" asp-for="user_password" placeholder="パスワード">
+    </div>
 
-        <center>
-            <br> <button type="submit" class="btn btn-primary">ログイン</button>
+    <center>
+        <br> <button type="submit" class="btn btn-primary">ログイン</button>
 
-            <hr> <a asp-area="" asp-controller="Home" asp-action="Privacy">新規登録はこちらから</a>@*登録画面に飛ぶ*@
-        </center>
+        <hr> <a asp-area="" asp-controller="Home" asp-action="Privacy">新規登録はこちらから</a>@*登録画面に飛ぶ*@
+    </center>
 </form>
