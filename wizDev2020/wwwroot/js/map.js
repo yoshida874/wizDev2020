@@ -133,7 +133,4 @@ function setMap(pos) {
         });
     }
    
-    
-
-
 }

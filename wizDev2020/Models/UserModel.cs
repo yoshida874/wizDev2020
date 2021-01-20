@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace wizDev2020.Models
 {
-    public class LoginModel
+    public class UserModel
     {
+        public int Id { get; set; }
+
         [Required]
-        public string UserName { get; set; }
+        public string user_name { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        public string PW { get; set; }
+        public string user_password { get; set; }
 
-        public bool Conf { get; set; }
+        public int character_id { get; set; }
     } 
 }
