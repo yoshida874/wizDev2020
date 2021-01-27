@@ -1,27 +1,39 @@
 ﻿@model QuizModel
 
-@{
-    var id = ViewContext.RouteData.Values["id"].ToString();
-    var now = $"{id}問目";
-    var next = Convert.ToInt32(id) + 1;
-}
-
-<h1>@now</h1>
-<p>@Model.quiz_question</p>
-<form class="form-group">
-    <div class="row">
-        <input id="1" type="button" asp-for="quiz_choice1" class="col btn btn-primary" onclick="show(this)" />
-        <input id="2" type="button" asp-for="quiz_choice2" class="col btn btn-primary" onclick="show(this)" />
-        <input id="3" type="button" asp-for="quiz_choice3" class="col btn btn-primary" onclick="show(this)" />
-        <input id="4" type="button" asp-for="quiz_choice4" class="col btn btn-primary" onclick="show(this)" />
+<div class="row">
+    <div class="col">
+        <!--何問目-->
+        <h1 id="quizCount">@ViewData["Now"]</h1>
+        <!--正答率-->
+        @*<p id="AlloutofCorrect" hidden>@ViewData["AlloutofCorrect"]</p>*@
     </div>
+</div>
+
+<!--問題文-->
+<p>@Model.quiz_question</p>
+<br />
+<!--選択肢-->
+<form class="form-group" method="get">
+    <ul>
+        <!--id 正解のボタンを特定するため
+            asp-for nameとvalueが生成
+            onclick -->
+        <li><input id="1" type="button" asp-for="@Model.quiz_choice1" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li><input id="2" type="button" asp-for="@Model.quiz_choice2" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li><input id="3" type="button" asp-for="@Model.quiz_choice3" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li><input id="4" type="button" asp-for="@Model.quiz_choice4" class="btn btn-primary" onclick="answer(this)" /></li>
+    </ul>
+    <!--次の問題へ遷移
+        asp-route-id url /questoin/{id?}にパラメータ指定-->
+    <input type="submit" name="id" asp-route-id="@ViewData["Next"]" class="btn btn-primary" value="次の問題" />
 </form>
 <br />
-<label id="correct" hidden>@Model.quiz_correct</label>
-<form method="post">
-    <input type="submit" asp-controller="Quiz" asp-action="Question" asp-route-id="@next" class="btn btn-primary" value="次の問題" />
-</form>
+
+<p id="correctPosition" hidden>@ViewBag.correctPosition</p>
+<p id="correct" hidden>@ViewData["Correct"]</p>
 <br />
+
+<!--解説 解答後に非表示解除 -->
 <ul id="descriptions" hidden>
     <li>
         <p>@Model.quiz_description1</p>
