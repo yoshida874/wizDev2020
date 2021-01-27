@@ -1,26 +1,6 @@
 ﻿var map;
 var marker = [];
 var infoWindow = [];//吹き出し
-var markerData = [ // マーカーを立てる場所名・緯度・経度
-    {
-        name: '郡山駅',
-        lat: 37.3981998,
-        lng: 140.3880404
-    },
-
-    {
-        name: 'イオンタウン郡山',
-        lat: 37.38994892859488,
-        lng: 140.38888514
-    },
-
-    {
-        name: '開成山公園',
-        lat: 37.39805083,
-        lng: 140.35825968
-    }
-];
-
 
 function routeSearch(position) {
     var latlon = new google.maps.LatLng(lat, lon);
