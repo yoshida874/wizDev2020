@@ -12,44 +12,41 @@
 </head>
 
 <body>
-    <header style="background:linear-gradient(forestgreen,darkseagreen,forestgreen)">
+    <header style="background:linear-gradient(forestgreen,darkseagreen,forestgreen)" >
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
 
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><font face="HGS行書体"><font size="2">地図でわかる</font><br>郡山の歴史（仮） </a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><font face="HGS行書体"><font size="3">地図でわかる</font><br>郡山の歴史（仮） </a>
+
+                <ul class="navbar-nav" >
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="MyPage" asp-action="Index"><font size="4">マイページ</font></a></li>
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="SignOut"><font size="4">ログアウト</font></a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-area="" asp-controller="Login" asp-action="Index" ><font size="5">ログイン</font></a>
+                        </li>
+                    }
+                </ul>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        @*検索バー*@
-                        <form action="cgi-bin/example.cgi" method="post">
-                            <p>場所を検索する</p>
-                            <input type="search" placeholder="キーワードを入力">
-                            <input type="submit" name="submit" value="検索">
-                        </form>
-
-                        <li class="nav-item">
-                            @*@<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>*@
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index"><center><b>ゲスト<br>ログインする</b></center></a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     </header>
-     <div class="container">
+    <div class="container">
+        <span style="font-family: 'Yu Gothic'">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
-        </div>
+        </span>
+    </div>
    
 
             <footer class="border-top footer text-muted">
