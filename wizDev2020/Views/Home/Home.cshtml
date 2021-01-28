@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+
+    <style>
+        #baseMap {
+            width: 900px;
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>@ViewData["Title"]</h1>
+    <div id="baseMap"></div>
+    <script src="~/js/map.js">
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5OowCygsww8q70YfHd3nDuf3-kgA9ss&callback=initMap">
+    </script>
+
+</body>
+
+

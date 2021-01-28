@@ -23,6 +23,16 @@ namespace wizDev2020.Controllers
             return View();
         }
 
+        public IActionResult Ask()
+        {
+            return View();
+        }
+
+        public IActionResult Use()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
