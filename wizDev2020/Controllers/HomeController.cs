@@ -6,20 +6,31 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using wizDev2020.Models;
+using System.Text.Json;
+using wizDev2020.Data;
+using System.Data.SqlClient;
 
 namespace wizDev2020.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly Wizdev2020Context _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(Wizdev2020Context context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            using (_context)
+            {
+                var historic_monument = from h in _context.HistricMonuments
+                                       select new { name = h.monument_name, lng = h.monument_longitude, lat = h.monument_latitude };
+                
+                 ViewBag.json = JsonSerializer.Serialize(historic_monument);
+            }
+
             return View();
         }
 
