@@ -1,13 +1,21 @@
 ﻿var correctPosition = document.getElementById('correctPosition');
 var PositionId = correctPosition.innerText;
+var selBtnId;
 
 showAlloutofCorrect();
+
+function getNum() {
+    // true 10問目以降
+    return (4 == quizCount.innerText.length ?
+        +quizCount.innerText.substr(0, 2) : +quizCount.innerText.substr(0, 1));
+}
 
 // 最初の出題か
 function isFirst() {
     var quizCount = document.getElementById('quizCount');   // x問目を取得
+    var num = getNum();
     // x問目からxを取り出し1と比較
-    if (quizCount.innerText.substr(0, 1) !== "1") {
+    if (1 < num) {
         return true;
     }
 }
@@ -43,11 +51,12 @@ function correctBtnEmphasis() {
 
 // onclick時に呼ばれる
 function answer(choice) {
+    selBtnId = choice.id;
     var correct = document.getElementById('correct');
     correctBtnEmphasis();
     // 正解
     if (isCorrect(choice)) {
-        correct.innerText = "正解";
+        correct.innerHTML = "正解です";
         correct.hidden = false;
     }
     // 不正解
@@ -63,4 +72,11 @@ function answer(choice) {
 function showDescriptions() {
     var descriptions = document.getElementById('descriptions');
     descriptions.hidden = false;
+}
+
+function setSelBtnId(submit) {
+    submit.value = selBtnId;
+    submit.hidden = true;
+    // 次の問題を別のボタンで表示
+    document.getElementById('ghost').hidden = false;
 }
