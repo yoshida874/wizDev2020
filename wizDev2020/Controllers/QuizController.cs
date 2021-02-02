@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using wizDev2020.Data;
 using wizDev2020.Models;
@@ -30,6 +31,7 @@ namespace wizDev2020.Controllers
         [HttpGet]
         public IActionResult Question(int id)
         {
+            GetParam(id);
             // 未出題なし
             if (_context.Quizzes.Count() < id)
             {
@@ -39,16 +41,43 @@ namespace wizDev2020.Controllers
             // 未出題あり
             else
             {
-                ViewBag.correct= correctNum; // 正答数
+                ViewBag.correctnum = correctNum; // 正答数
                 ViewBag.correctPosition = data[id - 1].quiz_correct; // 正答の位置
                 ViewData["Next"] = id + 1; // 次の問題の添え字
                 ViewData["Now"] = $"{id}問目";
                 ViewData["All"] = _context.Quizzes.Count(); // 総問題数
-                //ViewData["AlloutofCorrect"] = $"{ViewData["All"]}問中{correctNum}問正解"; ;
+                ViewData["AlloutofCorrect"] = $"{ViewData["All"]}問中{correctNum}問正解";
                 ViewData["Correct"] = $"正解は{ViewBag.correctPosition}番目の{data[id - 1].quiz_answer}";
 
                 // 配列の添え字が0から始まるため調整
                 return View(data[id - 1]);
+            }
+        }
+
+        private void GetParam(int id)
+        {
+            // 最初には?だけが渡されるため
+            if (1 < id)
+            {
+                var param = Request.QueryString.ToString();
+                var selId = param.Substring(param.Length - 1, 1);
+
+                isParse(id, selId);
+            }
+        }
+
+        // 変換可能かを調べ同一なら加算
+        private void isParse(int id, string selId)
+        {
+            int num;
+            bool success = int.TryParse(selId, out num);
+            if (success)
+            {
+                // 次の問題に遷移後に比較判定を行うため -2
+                if (num == data[id - 2].quiz_correct)
+                {
+                    correctNum++;
+                }
             }
         }
 

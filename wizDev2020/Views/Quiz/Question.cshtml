@@ -5,7 +5,7 @@
         <!--何問目-->
         <h1 id="quizCount">@ViewData["Now"]</h1>
         <!--正答率-->
-        @*<p id="AlloutofCorrect" hidden>@ViewData["AlloutofCorrect"]</p>*@
+        <p id="AlloutofCorrect" hidden>@ViewData["AlloutofCorrect"]</p>
     </div>
 </div>
 
@@ -25,7 +25,8 @@
     </ul>
     <!--次の問題へ遷移
         asp-route-id url /questoin/{id?}にパラメータ指定-->
-    <input type="submit" name="id" asp-route-id="@ViewData["Next"]" class="btn btn-primary" value="次の問題" />
+    <input type="submit" name="selId" asp-route-id="@ViewData["Next"]" class="btn btn-primary" value="次の問題" onclick="setSelBtnId(this)" />
+    <button id="ghost" hidden class="btn btn-primary">次の問題</button>
 </form>
 <br />
 
