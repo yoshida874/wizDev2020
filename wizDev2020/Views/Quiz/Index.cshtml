@@ -1,12 +1,5 @@
-﻿@model IEnumerable<QuizModel>
-
-@{
-    var all = $"全{Model.Count()}問";
-}
-
-
-<form class="form-group text-center" method="post">
-    <p>@all</p>
-    <br />
-        <input asp-controller="Quiz" asp-action="Question" asp-route-id="1" type="submit" class="btn btn-primary" value="開始" />
-</form>
+﻿<div class="text-center">
+    <h1>クイズ</h1>
+    <a asp-action="SetAll" asp-route-all="6" class="btn btn-primary">5問</a>
+    <a asp-action="SetAll" asp-route-all="11" type="submit" class="btn btn-primary">10問</a>
+</div>

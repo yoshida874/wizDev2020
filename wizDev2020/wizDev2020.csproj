@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <None Include="wwwroot\js\map.js" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
@@ -15,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <Foler Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

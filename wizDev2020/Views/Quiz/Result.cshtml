@@ -1,9 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Result";
-}
+﻿<h1>解答結果</h1>
 
-<h1>Result</h1>
-
-<form method="post" class="text-center">
-    <input asp-controller="Quiz" asp-action="Index" type="submit" class="btn btn-primary" value="もう一度" />
+<p>@ViewData["Correct"]</p>
+<form class="text-center">
+    <input asp-controller="Quiz" asp-action="Index" type="submit" class="btn btn-primary" value="問題数選択まで戻る" />
 </form>

@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.SqlServer;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 using wizDev2020.Models;
 
-namespace wizDev2020.Data
-{
-    public class Wizdev2020Context : DbContext
-    {
+namespace wizDev2020.Data {
+    public class Wizdev2020Context : DbContext {
 
-        public Wizdev2020Context(DbContextOptions<Wizdev2020Context> options) : base(options)
-        {
-        }
+        public Wizdev2020Context(DbContextOptions<Wizdev2020Context> options) : base(options) {}
 
         public DbSet<CharacterModel> Characters { get; set; }
         public DbSet<HistoricEventModel> HistoricEvents { get; set; }
