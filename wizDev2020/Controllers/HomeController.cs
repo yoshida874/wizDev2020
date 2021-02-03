@@ -26,10 +26,12 @@ namespace wizDev2020.Controllers
             using (_context)
             {
                 var historic_monument = from h in _context.HistricMonuments
-                                       select new { name = h.monument_name, lng = h.monument_longitude, lat = h.monument_latitude };
-                
-                 ViewBag.json = JsonSerializer.Serialize(historic_monument);
+                                       select new { name = h.monument_name,information = h.monument_information, lng = h.monument_longitude, lat = h.monument_latitude };
+
+                ViewBag.json = JsonSerializer.Serialize(historic_monument);
             }
+
+           
 
             return View();
         }
