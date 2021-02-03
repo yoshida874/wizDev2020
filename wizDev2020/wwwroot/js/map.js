@@ -76,7 +76,7 @@ function setMap(pos) {
         });
 
         infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-            content: '<div class="facilityInfo">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+            content: '<div class="facilityInfo">' + '<h5>'+markerData[i]['name'] +'</h5>'+ markerData[i]['information'] + '</div>' // 吹き出しに表示する内容
         });
         markerEvent(i, directionsService, directionsRenderer); // マーカーにクリックイベントを追加
     }
