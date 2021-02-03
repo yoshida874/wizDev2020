@@ -18,10 +18,10 @@
         <!--id 正解のボタンを特定するため
             asp-for nameとvalueが生成
             onclick -->
-        <li><input id="1" type="button" asp-for="@Model.quiz_choice1" class="btn btn-primary" onclick="answer(this)" /></li>
-        <li><input id="2" type="button" asp-for="@Model.quiz_choice2" class="btn btn-primary" onclick="answer(this)" /></li>
-        <li><input id="3" type="button" asp-for="@Model.quiz_choice3" class="btn btn-primary" onclick="answer(this)" /></li>
-        <li><input id="4" type="button" asp-for="@Model.quiz_choice4" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li style="margin-bottom: 16px"><input id="1" type="button" asp-for="@Model.quiz_choice1" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li style="margin-bottom: 16px"><input id="2" type="button" asp-for="@Model.quiz_choice2" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li style="margin-bottom: 16px"><input id="3" type="button" asp-for="@Model.quiz_choice3" class="btn btn-primary" onclick="answer(this)" /></li>
+        <li style="margin-bottom: 16px"><input id="4" type="button" asp-for="@Model.quiz_choice4" class="btn btn-primary" onclick="answer(this)" /></li>
     </ul>
     <!--次の問題へ遷移
         asp-route-id url /questoin/{id?}にパラメータ指定-->

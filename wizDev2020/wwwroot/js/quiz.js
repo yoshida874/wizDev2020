@@ -1,9 +1,10 @@
-﻿var correctPosition = document.getElementById('correctPosition');
-var PositionId = correctPosition.innerText;
-var selBtnId;
+﻿var correctPosition = document.getElementById('correctPosition');   // 正解のボタン
+var PositionId = correctPosition.innerText; // 正解のID
+var selBtnId;   // 選択するボタンのID
 
 showAlloutofCorrect();
 
+// 現問題数を取得
 function getNum() {
     // true 10問目以降
     return (4 == quizCount.innerText.length ?
@@ -74,6 +75,7 @@ function showDescriptions() {
     descriptions.hidden = false;
 }
 
+// 選択されたボタンのIDをセット
 function setSelBtnId(submit) {
     submit.value = selBtnId;
     submit.hidden = true;
