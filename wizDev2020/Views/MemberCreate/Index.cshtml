@@ -22,27 +22,35 @@
 <h1>@ViewData["Title"]</h1>
 
 <form method="post" class="col-6 ">
-
+    <center>
+        <b>
+            @if (!ViewBag.Conf)
+            {
+                <label style="color:red">パスワードが異なります </label>
+            }
+        </b>
+    </center>
+    <hr>
     <center>
         <div class="form-group">
             <label>ユーザー名(必須)</label>
-            <input class="form-control" placeholder="ユーザーID">
+            <input class="form-control" placeholder="ユーザーID" name="username">
         </div>
     </center>
     <center>
         <div class="form-group">
             <label>パスワード(必須)</label>
-            <input class="form-control" type="password" placeholder="パスワード">
+            <input class="form-control" type="password" placeholder="パスワード" name="userpw">
         </div>
     </center>
     <center>
         <div class="form-group">
             <label>パスワード(確認のためもう一度ご入力ください)</label>
-            <input class="form-control" type="password" placeholder="パスワード">
+            <input class="form-control" type="password" placeholder="パスワード" name="userpw_2">
         </div>
     </center>
 
     <center>
-        <button type="submit" class="btn btn-primary w-25 h-auto mt-2">登録</button>
+        <button type="submit" class="btn btn-primary w-25 h-auto mt-2" asp-controller="MemberCreate" asp-action="Index">登録</button>
     </center>
 </form>
